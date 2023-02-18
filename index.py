@@ -8,10 +8,10 @@ pygame.init()
 
 
 # Chargement du son
-sound = pygame.mixer.Sound('PYTHON/sound1.wav')
+sound = pygame.mixer.Sound('sound1.wav')
 
 # Chargement du fichier cascade Haar pour la détection de personnes
-person_cascade = cv2.CascadeClassifier('PYTHON/haarcascade_fullbody.xml')
+person_cascade = cv2.CascadeClassifier('haarcascade_fullbody.xml')
 
 # Ouverture du flux vidéo
 video_capture = cv2.VideoCapture(0) # 0 indique la webcam par défaut, sinon indiquer le chemin vers le fichier vidéo
