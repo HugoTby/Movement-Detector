@@ -27,7 +27,7 @@ python file-path/index.py
 ## Screenshots
 
 ![App Screenshot](https://media.discordapp.net/attachments/733366929561092157/1076539504548126861/image.png?width=1616&height=909)
-![App Screenshot](https://media.discordapp.net/attachments/733366929561092157/1076540096557355039/image.png?width=1616&height=909)
+![App Screenshot](https://media.discordapp.net/attachments/733366929561092157/1076550240062152825/image.png?width=1616&height=909)
 
 
 
