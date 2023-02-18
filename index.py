@@ -2,6 +2,7 @@ import cv2
 import datetime
 import pygame
 
+
 # Initialisation de Pygame
 pygame.init()
 
@@ -39,8 +40,31 @@ while True:
 
     # Affichage de l'heure en temps réel
     current_time = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
-    cv2.putText(frame, current_time, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 1, cv2.LINE_AA)
-    cv2.putText(frame, 'CAMAERA 1', (frame.shape[1]-140, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 1, cv2.LINE_AA)
+    cv2.putText(frame, current_time, (30, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 1, cv2.LINE_AA)
+    cv2.putText(frame, 'CAMAERA 1', (frame.shape[1]-160, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 1, cv2.LINE_AA)
+
+    # Dessin d'un cadre autour de l'écran
+    frame = cv2.rectangle(frame, (0, 0), (frame.shape[1], frame.shape[0]), (0, 255, 0), 2)
+
+    # Dessin du symbole "+"
+    center_x, center_y = int(frame.shape[1]/2), int(frame.shape[0]/2)
+    cv2.line(frame, (center_x-20, center_y), (center_x+20, center_y), (0, 0, 255), 2)
+    cv2.line(frame, (center_x, center_y-20), (center_x, center_y+20), (0, 0, 255), 2)
+
+    # Ajout des angles
+    angle_size = 20
+    angle_color = (0, 0, 255)
+    frame_height, frame_width = frame.shape[:2]
+    cv2.line(frame, (angle_size, angle_size), (angle_size, angle_size + 50), angle_color, 2)
+    cv2.line(frame, (angle_size, angle_size), (angle_size + 50, angle_size), angle_color, 2)
+    cv2.line(frame, (frame_width - angle_size, angle_size), (frame_width - angle_size, angle_size + 50), angle_color, 2)
+    cv2.line(frame, (frame_width - angle_size, angle_size), (frame_width - angle_size - 50, angle_size), angle_color, 2)
+    cv2.line(frame, (angle_size, frame_height - angle_size), (angle_size, frame_height - angle_size - 50), angle_color, 2)
+    cv2.line(frame, (angle_size, frame_height - angle_size), (angle_size + 50, frame_height - angle_size), angle_color, 2)
+    cv2.line(frame, (frame_width - angle_size, frame_height - angle_size), (frame_width - angle_size, frame_height - angle_size - 50), angle_color, 2)
+    cv2.line(frame, (frame_width - angle_size, frame_height - angle_size), (frame_width - angle_size - 50, frame_height - angle_size), angle_color, 2)
+
+
 
     
     # Affichage de l'image
